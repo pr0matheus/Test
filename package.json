@@ -1,0 +1,11 @@
+{
+  "name": "smart-office-dashboard",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node-red flows.json"
+  },
+  "dependencies": {
+    "node-red": "^3.1.0",
+    "@flowfuse/node-red-dashboard": "^1.11.0"
+  }
+}

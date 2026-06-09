@@ -1,0 +1,55 @@
+[
+    {
+        "id": "48f47b5c04e0eb11",
+        "type": "mqtt in",
+        "z": "6efe5b31f4e723df",
+        "name": "",
+        "topic": "office/lights",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1c8b5a3527113f23",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 300,
+        "wires": [
+            [
+                "84b4ffa9e41434ba",
+                "bd789eb2311a382e"
+            ]
+        ]
+    },
+    {
+        "id": "1c8b5a3527113f23",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "e7c567eb8ed64eeba5a3380924a4a279.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
