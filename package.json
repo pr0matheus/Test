@@ -5,7 +5,7 @@
     "node": "20.x"
   },
   "scripts": {
-    "start": "node-red -s settings.js flows.json"
+    "start": "node -e \"const fs = require('fs'); fs.writeFileSync('flows_cred.json', JSON.stringify({'1c8b5a3527113f23':{user:process.env.MQTT_USER,password:process.env.MQTT_PASS}}));\" && node-red -s settings.js flows.json"
   },
   "dependencies": {
     "node-red": "^3.1.0",
