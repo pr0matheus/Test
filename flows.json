@@ -431,7 +431,7 @@
         "type": "function",
         "z": "6efe5b31f4e723df",
         "name": "function 1",
-        "func": "// 1. Figure out which topic just fired and save its payload to memory\nif (msg.topic === \"office/status\") {\n    flow.set(\"roomStatus\", msg.payload);\n} else if (msg.topic === \"office/ac\") {\n    flow.set(\"acState\", msg.payload);\n} else if (msg.topic === \"office/lights\") {\n    flow.set(\"lightState\", msg.payload);\n}\n\n// 2. Retrieve the current state of ALL THREE from memory\n// (The || \"UNKNOWN\" part is a fallback if no data has arrived yet)\nlet currentStatus = flow.get(\"roomStatus\") || \"UNKNOWN\";\nlet currentAC = flow.get(\"acState\") || \"UNKNOWN\";\nlet currentLights = flow.get(\"lightState\") || \"UNKNOWN\";\n\n// 3. Now you can evaluate them all together!\n// Example Logic: If the room is empty but the AC is still on, send an alert.\nif ((currentStatus === \"OCCUPIED\" && currentAC === \"ON\") || (currentStatus === \"OCCUPIED\" && currentAC === \"ON\") || (currentStatus === \"OCCUPIED\" && currentAC === \"ON\"&&currentLights==\"ON\")) {\n    msg.payload = \"WARNING: Energy Waste! Room is empty but AC is running.\";\n    msg.topic = \"alerts/energy\";\n    return msg; // Passes the message to the output port\n}\nelse {\n    msg.payload = \"NONE\";\n    msg.topic = \"alerts/energy\";\n    return msg;\n}\n\n// If everything is fine, stop the flow here (do nothing)\nreturn null;",
+        "func": "// 1. Figure out which topic just fired and save its payload to memory\nif (msg.topic === \"office/status\") {\n    flow.set(\"roomStatus\", msg.payload);\n} else if (msg.topic === \"office/ac\") {\n    flow.set(\"acState\", msg.payload);\n} else if (msg.topic === \"office/lights\") {\n    flow.set(\"lightState\", msg.payload);\n}\n\n// 2. Retrieve the current state of ALL THREE from memory\nlet currentStatus = flow.get(\"roomStatus\") || \"UNKNOWN\";\nlet currentAC = flow.get(\"acState\") || \"UNKNOWN\";\nlet currentLights = flow.get(\"lightState\") || \"UNKNOWN\";\n\n// 3. Evaluate states: Trigger warning if room is UNOCCUPIED but AC is ON\nif (currentStatus === \"UNOCCUPIED\" && currentAC === \"ON\") {\n    msg.payload = \"WARNING: Energy Waste! Room is empty but AC is running.\";\n    msg.topic = \"alerts/energy\";\n    return msg;\n} else {\n    msg.payload = \"NONE\";\n    msg.topic = \"alerts/energy\";\n    return msg;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -537,7 +537,7 @@
         ]
     },
     {
-        "id": "0cb4453cc036a571",
+        "id": "f783605afac9360f",
         "type": "global-config",
         "env": [],
         "modules": {
