@@ -134,9 +134,10 @@
         "name": "",
         "broker": "e7c567eb8ed64eeba5a3380924a4a279.s1.eu.hivemq.cloud",
         "port": "8883",
+        "tls": "",
         "clientid": "",
         "autoConnect": true,
-        "usetls": false,
+        "usetls": true,
         "protocolVersion": 4,
         "keepalive": 60,
         "cleansession": true,
@@ -536,7 +537,7 @@
         ]
     },
     {
-        "id": "3ab8ace6cce9b4af",
+        "id": "0cb4453cc036a571",
         "type": "global-config",
         "env": [],
         "modules": {
