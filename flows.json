@@ -132,6 +132,8 @@
         "id": "1c8b5a3527113f23",
         "type": "mqtt-broker",
         "name": "",
+        "user": "${MQTT_USER}",
+        "password": "${MQTT_PASS}",
         "broker": "e7c567eb8ed64eeba5a3380924a4a279.s1.eu.hivemq.cloud",
         "port": "8883",
         "tls": "",
