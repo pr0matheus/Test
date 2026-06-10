@@ -12,5 +12,6 @@
     "@flowfuse/node-red-dashboard": "1.30.2",
     "node-red-node-email": "5.2.4",
     "node-red-contrib-postgresql": "^0.15.4"
+    "node-red-contrib-influxdb": "0.7.0"
   }
 }
