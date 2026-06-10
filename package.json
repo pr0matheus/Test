@@ -5,11 +5,11 @@
     "node": "20.x"
   },
   "scripts": {
-    "start": "node -e \"const fs = require('fs'); console.log('=> Env Check - MQTT_USER:', process.env.MQTT_USER ? 'LOADED' : 'MISSING'); const creds = JSON.stringify({'1c8b5a3527113f23':{user:process.env.MQTT_USER||'',password:process.env.MQTT_PASS||''}}); fs.writeFileSync('flows_cred.json', creds); try { fs.mkdirSync('/opt/render/.node-red', {recursive:true}); fs.writeFileSync('/opt/render/.node-red/flows_cred.json', creds); } catch(e){}\" && node-red -s settings.js flows.json"
+    "start": "node -e \"const fs = require('fs'); console.log('=> Env Check - MQTT & Email:', process.env.MQTT_USER ? 'MQTT_OK' : 'MQTT_MISSING', process.env.EMAIL_USER ? 'EMAIL_OK' : 'EMAIL_MISSING'); const creds = JSON.stringify({'1c8b5a3527113f23':{user:process.env.MQTT_USER||'',password:process.env.MQTT_PASS||''},'ed9ec732d5bf02d5':{userid:process.env.EMAIL_USER||'',password:process.env.EMAIL_PASS||''}}); fs.writeFileSync('flows_cred.json', creds); try { fs.mkdirSync('/opt/render/.node-red', {recursive:true}); fs.writeFileSync('/opt/render/.node-red/flows_cred.json', creds); } catch(e){}\" && node-red -s settings.js flows.json"
   },
   "dependencies": {
-    "node-red": "^3.1.15",
-    "@flowfuse/node-red-dashboard": "^1.30.2",
-    "node-red-node-email": "^5.2.4"
+    "node-red": "^3.1.0",
+    "@flowfuse/node-red-dashboard": "1.30.2",
+    "node-red-node-email": "5.2.4"
   }
 }
