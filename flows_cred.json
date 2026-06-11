@@ -3,4 +3,7 @@
     "user": "${MQTT_USER}",
     "password": "${MQTT_PASS}"
   }
+  "106264278ad32f3c": {
+        "token": "${INFLUX_TOKEN}"
+    }
 }
